@@ -17,3 +17,18 @@ spec:
           image: laithharb/store:v7
           ports:
             - containerPort: 3000
+
+
+
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: store-app
+#   labels:
+#     component: web
+# spec:
+#   containers:
+#     - name: store
+#       image: laithharb/store
+#       ports:
+#         - containerPort: 3000
