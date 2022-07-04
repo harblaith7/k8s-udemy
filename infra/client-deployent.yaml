@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: webapp
+  template:
+    metadata:
+      labels:
+        component: webapp
+    spec:
+      containers:
+        - name: store
+          image: laithharb/store:v7
+          ports:
+            - containerPort: 3000
