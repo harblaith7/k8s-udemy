@@ -19,6 +19,12 @@ spec:
           image: rabbitmq
           ports:
             - containerPort: 5672
+          env:
+            - name: YES_SIR
+              value: adsadsadsadas
+          envFrom:
+            - configMapRef:
+              name: config-name
 
 ---
 apiVersion: v1
@@ -33,3 +39,11 @@ spec:
       port: 5672
       protocol: TCP
       targetPort: 5672
+
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: global-dtaasda
+data:
+  THE_STUFF: "asdas"
